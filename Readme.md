@@ -1,4 +1,9 @@
+#Library origin
+This is almost entirely a copy of https://github.com/RollingGecko/VescUartControl/tree/VESC6 .
+Everything here is only minimized in order to create a small example which can be run out of the box.
+
 #VescUartControl library
+
 
 Library for arduino to interface over UART with the Vesc BLDC controler (http://vedder.se/2015/01/vesc-open-source-esc/)
 It is used in the ArduBoardControl. Refer here: https://github.com/RollingGecko/ArduBoardControler
