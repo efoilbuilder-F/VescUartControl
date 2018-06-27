@@ -49,7 +49,7 @@ Write the App configuration. It might be necessary to reset the Vesc now by cycl
 You can enable realtime monitoring and switch to the corresponding panel on the VescTool to see the changes you make with your arduino.
 In VescTool and the Arduino IDE make sure the right serial port is selected.
 
-** WARNING: This Arduino Sketch instantly sets the DutyCycle of the Vesc to 5.15%. Any connected motor will start moving instantly. You can see this in the Vesctool even with now motor connected. **
+**WARNING: This Arduino Sketch instantly sets the DutyCycle of the Vesc to 5.15%. Any connected motor will start moving instantly. You can see this in the Vesctool even with now motor connected.**
 
 Use the serial monitor in the Ardunio IDE to watch the values read from your Vesc.
 Example here with no motor or sendors connnected:
