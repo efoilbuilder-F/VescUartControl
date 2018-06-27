@@ -1,53 +1,21 @@
 #Library origin
+
 This is almost entirely a copy of https://github.com/RollingGecko/VescUartControl/tree/VESC6 .
 Everything here is only minimized in order to create a small example which can be run out of the box.
+The original [licencse](LICENSE.md) can be applied here, too.
 
 #VescUartControl library
-
 
 Library for arduino to interface over UART with the Vesc BLDC controler (http://vedder.se/2015/01/vesc-open-source-esc/)
 It is used in the ArduBoardControl. Refer here: https://github.com/RollingGecko/ArduBoardControler
 
-The files libraries
+#Code origin
 
-crc
+There are [original code comments and source descriptions](codeandsourcedescription.md) about how this project was developed.
 
-datatypes
+#How to use this repository
 
-buffer
-
-are directly forked from https://github.com/vedderb/bldc
-
-
-All available UART handlers the VESC can deal with can be found in the file commands.c (https://github.com/vedderb/bldc)
-in the function commands_process_packet. You can write easily own handler functions. Use converting functions in 
-the library buffer.c.
-
-The rest shut be comment sufficient in the VescUart.h. Take also a look to the RX-Site of the ArduBoardControler (https://github.com/RollingGecko/ArduBoardControler)
-
-##Requirements to use this library on bldc FW
-
-The needed changes where already merged by Vedder to the FW. :)
-
-In bldc-tool please activate UART and if needed the nunchuk application. 
-
-
-
-##Some details to the UART port used in the VESC
-
-It is a uint8_t byte stream. 
-
-First byte: 
-
-0x02 for payload length of 256 byte >> next byte is for the payload length 
-
-0x03 for >256 byte payload length  >> next 2 byte for the payload length
-
-The follwing 2 bytes after the payload are the checksum. (see crc.h)
-
-The byte stream it terminated with a 0x03.
-
-For more details please refer also to http://vedder.se/2015/10/communicating-with-the-vesc-using-uart/
+This is a quick out of the box configuration for an Arduino (I used the Mega 2560 Variant) to communicate with the Vesc via UART. I tested this with VescTool 0.91 and firmware 3.37 on a Vesc 4.12. This should work with at least any VescTool firmware and Vesc 4.12 and 6.x.
 
 
 

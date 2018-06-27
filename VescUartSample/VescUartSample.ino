@@ -12,8 +12,8 @@
 
 #define DEBUG 
 #include "Config.h"
-#include <VescUart.h>
-#include <datatypes.h>
+#include "VescUart.h"
+#include "datatypes.h"
 
 
 unsigned long count;
@@ -35,14 +35,8 @@ struct bldcMeasure measuredVal;
 	
 // the loop function runs over and over again until power down or reset
 void loop() {
-	//int len=0;
-	//len = ReceiveUartMessage(message);
-	//if (len > 0)
-	//{
-	//	len = PackSendPayload(message, len);
-	//	len = 0;
-	//}
-	
+
+	delay(2000);  //delay this loop, for demonstration only, this can be much quicker
 	if (VescUartGetValue(measuredVal)) {
 		DEBUGSERIAL.print("Loop: "); DEBUGSERIAL.println(count++);
 		SerialPrint(measuredVal);
@@ -51,6 +45,8 @@ void loop() {
 	{
 		Serial.println("Failed to get data!");
 	}
+  float dutycyletoset = 0.0515; // a value between 0 and 1 as float, will select duty cyle setting for vesc with this value. i.e 0.0515 is 5.15% dutycycle
+  VescUartSetDuty(dutycyletoset); // initiate a transfer to vesc and set the duty cycle to the above value, you can confirm this with the VescTool
 	
 }
 
